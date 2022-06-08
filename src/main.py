@@ -57,7 +57,7 @@ class mcli:
                 for i in attachments_list:
                     path = self.download(i)
                     print(termcolor.colored(f"{attachment['fileName']} downloaded to {path}", "green"))
-                print(termcolor.colored("--------------------------------", "blue"))
+                    print(termcolor.colored("--------------------------------", "blue"))
             else:
                 try:
                     if int(choice) > 0 and int(choice) < len(attachments_list)+1:
