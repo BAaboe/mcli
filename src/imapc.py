@@ -53,9 +53,9 @@ class imapc:
         while True:
             self.username = input("Username: ")
             self.passw = getpass("Password: ")
-            if self.connect(): break
+            if self.connect(): return True
             if tries > 2:
-                quit()
+                return False
             else:
                 tries += 1
 
@@ -236,10 +236,8 @@ class imapc:
 
         if isMultiparted:
             contentDict = self.parseMultiparted(content)
-            print("should be here")
         else:
             contentDict = self.parseSingleparted(content, boundry)
-            print("should not be here")
 
         self.Log("Parsing content", "[COMPLETED]")
         return contentDict
