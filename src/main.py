@@ -1,9 +1,10 @@
 from imapc import imapc
-from smtpc import smtpc
+#from smtpc import smtpc
 import PIL.Image as Image
 import cv2, io, os, base64, termcolor
 import numpy as np
 from tqdm import tqdm
+from getpass import getpass
 
 class mcli:
     def __init__(self):
@@ -236,7 +237,7 @@ class mcli:
         self.clear()
         while True:
             email = input("Enter your email address: ")
-            password = input("Enter your password: ")
+            password = getpass("Enter your password: ")
             if "@" not in email:
                 self.clear()
                 print("Not a valid email address")
